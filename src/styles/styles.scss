@@ -1,0 +1,27 @@
+@import "colors.scss";
+@import "reset.scss";
+@import "fonts.scss";
+
+// main tag
+html,
+body {
+}
+
+// default
+.text-center {
+    text-align: center;
+}
+.w-100 {
+    width: 100%;
+}
+.form-div>div {
+    width: 100%;
+}
+
+// spaces
+.mb-0 {
+    margin-bottom: 0;
+}
+.mt-5 {
+    margin-top: 2rem;
+}

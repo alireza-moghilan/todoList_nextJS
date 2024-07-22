@@ -1,0 +1,77 @@
+$roboto-font-path: "../../public/fonts";
+@font-face {
+    src:
+        url("#{$roboto-font-path}/woff2/KalamehWeb_Regular.woff2") format("woff2"),
+        url("#{$roboto-font-path}/woff/KalamehWeb_Regular.woff") format("woff")
+            url("#{$roboto-font-path}/ttf/KalamehWeb_Regular.ttf") format("ttf")
+            url("#{$roboto-font-path}/eot/KalamehWeb_Regular.eot") format("eot");
+
+    font-family: "kalamehRegular";
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    src:
+        url("#{$roboto-font-path}/woff2/KalamehWeb_Bold.woff2") format("woff2"),
+        url("#{$roboto-font-path}/woff/KalamehWeb_Bold.woff") format("woff")
+            url("#{$roboto-font-path}/ttf/KalamehWeb_Bold.ttf") format("ttf")
+            url("#{$roboto-font-path}/eot/KalamehWeb_Bold.eot") format("eot");
+
+    font-family: "kalamehBold";
+    font-weight: 900;
+}
+@font-face {
+    src:
+        url("#{$roboto-font-path}/woff2/KalamehWeb_Black.woff2") format("woff2"),
+        url("#{$roboto-font-path}/woff/KalamehWeb_Black.woff") format("woff")
+            url("#{$roboto-font-path}/ttf/KalamehWeb_Black.ttf") format("ttf")
+            url("#{$roboto-font-path}/eot/KalamehWeb_Black.eot") format("eot");
+
+    font-family: "kalamehBlack";
+    font-weight: 900;
+}
+@font-face {
+    src:
+        url("#{$roboto-font-path}/woff2/KalamehWeb_thin.woff2") format("woff2"),
+        url("#{$roboto-font-path}/woff/KalamehWeb_thin.woff") format("woff")
+            url("#{$roboto-font-path}/ttf/KalamehWeb_thin.ttf") format("ttf")
+            url("#{$roboto-font-path}/eot/KalamehWeb_thin.eot") format("eot");
+
+    font-family: "kalamehThin";
+    font-weight: 100;
+}
+
+
+
+// font size
+.icon-font-size {
+    font-size: 1.5rem;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "kalamehBlack" !important;
+    margin: 1.5rem 0;
+}
+h1 {font-size: 3rem;}
+h2 {font-size: 2rem;}
+
+p,textarea {
+    font-size: 2rem;
+}
+
+label,button {
+    font-family: "kalamehBlack" !important;
+    font-size: 1.5rem !important;
+
+}
+
+button {height: 48px !important;}
+
+div {
+    font-size: 1rem;
+}
+
+input,textarea {
+    font-family: "kalamehBold" !important;
+    font-size: 1.3rem !important;
+}
