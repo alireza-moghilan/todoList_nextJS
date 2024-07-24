@@ -3,6 +3,8 @@ import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
 import t from "@/component/language/lang";
 import { AddBtn } from '../btn/btn';
+import { PostDataTodos } from '../query';
+import { useRouter } from 'next/navigation';
 
 
 type FieldType = {
@@ -10,15 +12,18 @@ type FieldType = {
     description?: string;
 };
 
-const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-    console.log('Success:', values);
-};
-
-const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-};
-
 const FormData = () => {
+    const mutation = PostDataTodos();
+
+    const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+        const dataTodos:{} = {
+            userId: localStorage.getItem('userId'),
+            title: values.title,
+            description: values.description
+        }
+        mutation.mutate({ ...dataTodos })
+    };
+
     return (
         <>
             <h2>{t('addTask')}</h2>
@@ -29,7 +34,6 @@ const FormData = () => {
                 wrapperCol={{ span: 24 }}
                 style={{ minWidth: '100%' }}
                 onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
                 <Form.Item<FieldType>

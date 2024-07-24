@@ -1,7 +1,7 @@
 "use client"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { PropsWithChildren,useRef } from "react";
+import { PropsWithChildren, useRef } from "react";
 export const RQProvider = ({ children }: PropsWithChildren) => {
     const rqConfig = useRef(
         new QueryClient({
