@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // url Api
 const instance = axios.create({
-    baseURL: 'http://localhost:3001'
+    baseURL: 'http://localhost:3002'
 });
 
 

@@ -3,6 +3,8 @@ import type { FormProps } from 'antd';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { AddBtn } from '../btn/btn';
 import t from '../language/lang'
+import { uid } from 'uid';
+import { CreateNewUser } from '../query';
 
 type FieldType = {
     username?: string;
@@ -10,15 +12,24 @@ type FieldType = {
     remember?: string;
 };
 
-const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-    console.log('Success:', values);
-};
-
-const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-};
-
 const SingUp = () => {
+    const createNewUser = CreateNewUser()
+
+    const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+        const dataUser = {
+            userId: uid(2),
+            userName: values.username,
+            password: values.password,
+            logined: true,
+            token: uid(32)
+        }
+        // save in localStorage
+        localStorage.setItem('token', dataUser.token)
+        localStorage.setItem('userId', dataUser.userId)
+
+        // post data
+        createNewUser.mutate({ ...dataUser })
+    };
 
     return (
         <>
@@ -30,7 +41,6 @@ const SingUp = () => {
                 wrapperCol={{ span: 24 }}
                 style={{ minWidth: '100%' }}
                 onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
                 <Form.Item<FieldType>
